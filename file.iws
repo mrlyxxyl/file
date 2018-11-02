@@ -6,7 +6,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/client/web/WEB-INF/web.xml" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541137191903" ignored="false" />
     <file path="$PROJECT_DIR$/../backup_local/client/src/main/resources/applicationContext.xml" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541137255257" ignored="false" />
-    <file path="/Dummy.txt" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541151011473" ignored="false" />
+    <file path="/Dummy.txt" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541153361661" ignored="false" />
     <file path="/config.properties" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541152658528" ignored="false" />
     <file path="/UploadController.java" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541139736236" ignored="false" />
     <file path="/applicationContext.xml" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541141408529" ignored="false" />
@@ -24,7 +24,7 @@
     <file path="$PROJECT_DIR$/client/target/classes/application-quartz.xml" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541144053844" ignored="false" />
     <file path="/FileService.java" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541153145266" ignored="false" />
     <file path="$PROJECT_DIR$/../backup_local/client/src/main/java/net/ys/controller/ApiController.java" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541144363105" ignored="false" />
-    <file path="$PROJECT_DIR$/../backup_local/client/src/main/java/net/ys/service/FileService.java" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541152683808" ignored="false" />
+    <file path="$PROJECT_DIR$/../backup_local/client/src/main/java/net/ys/service/FileService.java" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541153252140" ignored="false" />
     <file path="$PROJECT_DIR$/../backup_local/client/src/main/resources/config.properties" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541152658528" ignored="false" />
     <file path="$PROJECT_DIR$/../backup_local/readme.txt" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541152243711" ignored="false" />
     <file path="/readme.txt" changelist="25fc42fa-15af-47bd-8129-84d28aa13706" time="1541152884245" ignored="false" />
@@ -218,6 +218,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="file" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -571,7 +581,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -591,7 +601,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298611" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21603428" sideWeight="0.837963" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21603428" sideWeight="0.837963" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
