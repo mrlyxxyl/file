@@ -83,10 +83,6 @@ public class FileController {
                 desPath.mkdirs();
             }
             File targetFile = new File(targetPath + fileName);
-            if (targetFile.exists()) {
-                return "true";
-            }
-
             FileUtils.copyInputStreamToFile(file.getInputStream(), targetFile);
             return "true";
         } catch (Exception e) {
