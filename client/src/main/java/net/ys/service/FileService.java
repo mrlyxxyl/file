@@ -66,9 +66,8 @@ public class FileService {
         long lastScanTime = 867686400000L;
         long now = System.currentTimeMillis();
 
-        int threadNum = paths.size() < THREAD_NUM ? paths.size() : THREAD_NUM;
         List<FutureTask<Integer>> futureTasks = new ArrayList<FutureTask<Integer>>();//进行异步任务列表
-        ExecutorService executorService = Executors.newFixedThreadPool(threadNum);//线程池 初始化三十个线程 和JDBC连接池是一个意思 实现重用
+        ExecutorService executorService = Executors.newFixedThreadPool(THREAD_NUM);//线程池 初始化三十个线程 和JDBC连接池是一个意思 实现重用
         Callable<Integer> callable;
         List<File> files;
         for (String path : paths) {
