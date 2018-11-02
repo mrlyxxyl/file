@@ -31,9 +31,9 @@ import java.util.concurrent.FutureTask;
 @Service
 public class FileService {
 
-    static final int PER_LEN = 1024 * 1024 * 20;//20M 每个临时文件大小
+    static long perLen;//每个分片文件大小
 
-    static final int THREAD_NUM = 20;//线程数量
+    static int threadNum;//线程数量
 
     static final String SP = "__";
 
@@ -57,6 +57,8 @@ public class FileService {
         attachmentTmp = PropertyUtil.get("temp_attachment_path");
         fileInfoUrl = PropertyUtil.get("file_info_url");
         clientIpAddress = PropertyUtil.get("client_ip_address");
+        threadNum = Integer.parseInt(PropertyUtil.get("thread_num"));
+        perLen = Long.parseLong(PropertyUtil.get("per_len")) * 1024 * 1024;
     }
 
     public void initUpload() {
@@ -66,7 +68,7 @@ public class FileService {
         long now = System.currentTimeMillis();
 
         List<FutureTask<Integer>> futureTasks = new ArrayList<FutureTask<Integer>>();//进行异步任务列表
-        ExecutorService executorService = Executors.newFixedThreadPool(THREAD_NUM);//线程池 初始化三十个线程 和JDBC连接池是一个意思 实现重用
+        ExecutorService executorService = Executors.newFixedThreadPool(threadNum);//线程池 初始化三十个线程 和JDBC连接池是一个意思 实现重用
         Callable<Integer> callable;
         List<File> files;
         for (String path : paths) {
@@ -155,7 +157,7 @@ public class FileService {
                 filePath = filePath.substring(2);
             }
 
-            if (fileLen <= PER_LEN) {//直接上传
+            if (fileLen <= perLen) {//直接上传
                 flag = fullUpload(file, filePath);
             } else {//切分上传
                 flag = splitUpload(file, filePath);
@@ -199,7 +201,7 @@ public class FileService {
     private List<File> split(File file) throws IOException {
 
         long fileLen = file.length();
-        int fileNum = (int) (fileLen / PER_LEN + (fileLen % PER_LEN == 0 ? 0 : 1));//切分文件个数
+        int fileNum = (int) (fileLen / perLen + (fileLen % perLen == 0 ? 0 : 1));//切分文件个数
 
         FileOutputStream fos;
         RandomAccessFile fis = new RandomAccessFile(file, "rw");
@@ -209,7 +211,7 @@ public class FileService {
         int page;
         long readSize;
         long startPoint;
-        BigDecimal per = new BigDecimal(PER_LEN + "");
+        BigDecimal per = new BigDecimal(perLen + "");
         List<File> files = new ArrayList<File>();
         File f;
         for (page = 0; page < fileNum; page++) {
@@ -223,7 +225,7 @@ public class FileService {
             while ((len = fis.read(bytes)) > 0) {
                 fos.write(bytes, 0, len);
                 readSize += len;
-                if (readSize == PER_LEN) {
+                if (readSize == perLen) {
                     fos.flush();
                     break;
                 }
