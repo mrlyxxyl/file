@@ -21,6 +21,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
 
 /**
  * 定时任务
@@ -29,6 +33,8 @@ import java.util.UUID;
 public class FileService {
 
     static final int PER_LEN = 1024 * 1024 * 20;//20M 每个临时文件大小
+
+    static final int THREAD_NUM = 5;//线程数量
 
     static final String SP = "__";
 
@@ -52,6 +58,40 @@ public class FileService {
         attachmentTmp = PropertyUtil.get("temp_attachment_path");
         fileInfoUrl = PropertyUtil.get("file_info_url");
         clientIpAddress = PropertyUtil.get("client_ip_address");
+    }
+
+    public void initUpload() {
+        LogUtil.debug("initUpload--start");
+
+        long lastScanTime = 867686400000L;
+        long now = System.currentTimeMillis();
+
+        int threadNum = paths.size() < THREAD_NUM ? paths.size() : THREAD_NUM;
+        List<FutureTask<Integer>> futureTasks = new ArrayList<FutureTask<Integer>>();//进行异步任务列表
+        ExecutorService executorService = Executors.newFixedThreadPool(threadNum);//线程池 初始化三十个线程 和JDBC连接池是一个意思 实现重用
+        Callable<Integer> callable;
+        List<File> files;
+        for (String path : paths) {
+            files = scanFile(path, lastScanTime, now);
+
+            if (files.size() > 0) {
+                for (File file : files) {
+                    callable = new TransCallable<Integer>(file, lastScanTime);
+                    FutureTask<Integer> futureTask = new FutureTask<Integer>(callable);
+                    futureTasks.add(futureTask);
+                    executorService.submit(futureTask);
+                }
+
+                try {
+                    for (FutureTask<Integer> futureTask : futureTasks) {
+                        futureTask.get();
+                    }
+                } catch (Exception e) {
+                    LogUtil.error(e);
+                }
+            }
+        }
+        LogUtil.debug("initUpload--end");
     }
 
     public void upload() {
@@ -215,5 +255,31 @@ public class FileService {
         }
 
         return flag;
+    }
+
+    class TransCallable<T> implements Callable<T> {
+
+        private File file;
+
+        private long lastScanTime;
+
+        TransCallable(File file, long lastScanTime) {
+            this.lastScanTime = lastScanTime;
+            this.file = file;
+        }
+
+        @Override
+        public T call() throws Exception {
+            try {
+                LogUtil.debug(Thread.currentThread().getName());
+                boolean flag = upload(file);
+                if (flag) {
+                    file.setLastModified(lastScanTime);
+                }
+            } catch (Exception e) {
+                LogUtil.error(e);
+            }
+            return null;
+        }
     }
 }

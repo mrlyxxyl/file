@@ -20,9 +20,17 @@ public class ApiController {
     @Resource
     private FileService fileService;
 
+    @RequestMapping(value = "initUpload", headers = "Accept=application/json")
+    @ResponseBody
+    public Map<String, Object> initUpload() throws IOException {
+        long start = System.currentTimeMillis();
+        fileService.initUpload();
+        return GenResult.SUCCESS.genResult(System.currentTimeMillis() - start);
+    }
+
     @RequestMapping(value = "upload", headers = "Accept=application/json")
     @ResponseBody
-    public Map<String, Object> multiplyPath() throws IOException {
+    public Map<String, Object> upload() throws IOException {
         long start = System.currentTimeMillis();
         fileService.upload();
         return GenResult.SUCCESS.genResult(System.currentTimeMillis() - start);
