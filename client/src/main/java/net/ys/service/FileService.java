@@ -34,7 +34,7 @@ public class FileService {
 
     static final int PER_LEN = 1024 * 1024 * 20;//20M 每个临时文件大小
 
-    static final int THREAD_NUM = 5;//线程数量
+    static final int THREAD_NUM = 20;//线程数量
 
     static final String SP = "__";
 
