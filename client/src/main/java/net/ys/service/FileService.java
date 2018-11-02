@@ -3,7 +3,6 @@ package net.ys.service;
 import net.ys.utils.FileUploadUtil;
 import net.ys.utils.LogUtil;
 import net.ys.utils.PropertyUtil;
-import net.ys.utils.TimeUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.TrueFileFilter;
@@ -96,7 +95,7 @@ public class FileService {
     public void upload() {
         LogUtil.debug("upload--start");
 
-        long lastScanTime = TimeUtil.queryLastScanTime();
+        long lastScanTime = 867686400000L;
         long now = System.currentTimeMillis();
 
         List<File> files;
@@ -115,7 +114,6 @@ public class FileService {
                 }
             }
         }
-        TimeUtil.flushLastScanTime(now);
         LogUtil.debug("upload--end");
     }
 
