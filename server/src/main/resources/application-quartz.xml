@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+    <task:scheduler id="qbScheduler" pool-size="15"/>
+
+    <task:scheduled-tasks scheduler="qbScheduler">
+
+        <!--零点十分同步表结构-->
+        <task:scheduled ref="jobService" method="syncDbStructure" cron="10 10 0 * * ?"/>
+
+        <!--零点半同步表数据-->
+        <task:scheduled ref="jobService" method="execTrans" cron="10 30 0 * * ?"/>
+
+        <!--每隔两小时删除备份脚本zip文件-->
+        <task:scheduled ref="scheduleService" method="deleteScriptFile" cron="0 0 */2 * * ?"/>
+
+        <task:scheduled ref="scheduleService" method="deleteDbFile" cron="0 0 0 * * ?"/>
+
+    </task:scheduled-tasks>
+</beans>
