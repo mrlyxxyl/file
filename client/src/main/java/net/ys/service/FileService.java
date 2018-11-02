@@ -58,7 +58,7 @@ public class FileService {
         fileInfoUrl = PropertyUtil.get("file_info_url");
         clientIpAddress = PropertyUtil.get("client_ip_address");
         threadNum = Integer.parseInt(PropertyUtil.get("thread_num"));
-        perLen = Long.parseLong(PropertyUtil.get("per_len")) * 1024 * 1024;
+        perLen = Integer.parseInt(PropertyUtil.get("per_len")) * 1024 * 1024;
     }
 
     public void initUpload() {
