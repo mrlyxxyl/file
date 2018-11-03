@@ -17,12 +17,14 @@ import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping(value = "file")
@@ -143,7 +145,8 @@ public class FileController {
         response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
 
         String key = sysFile.getFilePath() + "/" + sysFile.getFileName();
-        InputStream is = fileOperate.download(sysFile.getStorageRootPath(), key);
+        File tempFile = File.createTempFile(UUID.randomUUID().toString(), "tmp");
+        InputStream is = fileOperate.download(sysFile.getStorageRootPath(), key, tempFile);
         if (is == null) {
             return;
         }
@@ -157,5 +160,7 @@ public class FileController {
         }
         out.close();
         is.close();
+
+        tempFile.delete();
     }
 }

@@ -223,5 +223,13 @@
             <version>3.1</version>
         </dependency>
         <!--http client 上传文件用-->
+
+        <!--oss-->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>2.8.3</version>
+        </dependency>
+        <!--oss-->
     </dependencies>
 </project>

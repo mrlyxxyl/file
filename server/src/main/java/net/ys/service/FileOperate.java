@@ -1,5 +1,6 @@
 package net.ys.service;
 
+import java.io.File;
 import java.io.InputStream;
 
 /**
@@ -14,5 +15,5 @@ public interface FileOperate {
 
     boolean info(String filePath, String fileName, long fileSize, String clientIpAddress);
 
-    InputStream download(String root, String key);
+    InputStream download(String root, String key, File tempFile);
 }

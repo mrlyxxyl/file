@@ -3,13 +3,12 @@ package net.ys.service;
 import net.ys.util.LogUtil;
 import net.ys.util.PropertyUtil;
 import org.apache.commons.io.FileUtils;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.io.*;
 
-@Service(value = "fileOperate")
+//@Service(value = "fileOperate")
 public class FileOperateLocal implements FileOperate {
 
     @Resource
@@ -72,7 +71,7 @@ public class FileOperateLocal implements FileOperate {
     }
 
     @Override
-    public InputStream download(String root, String key) {
+    public InputStream download(String root, String key, File tempFile) {
         try {
             return new FileInputStream(root + key);
         } catch (FileNotFoundException e) {

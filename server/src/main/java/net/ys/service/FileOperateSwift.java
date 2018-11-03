@@ -15,6 +15,7 @@ import org.apache.http.impl.client.HttpClients;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -110,7 +111,7 @@ public class FileOperateSwift implements FileOperate {
     }
 
     @Override
-    public InputStream download(String container, String key) {
+    public InputStream download(String container, String key, File tempFile) {
         HttpGet httpget = null;
         CloseableHttpResponse response;
         try {
