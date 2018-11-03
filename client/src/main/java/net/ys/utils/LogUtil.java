@@ -10,13 +10,15 @@ public class LogUtil {
 
     private static Logger log = Logger.getLogger(LogUtil.class);
 
+    static final String ENTER = "\r\n";
+
     public static void error(Exception e) {
-        System.out.println("\r\n" + System.currentTimeMillis() + " error-msg: " + e.getMessage());
+        System.out.println(ENTER + System.currentTimeMillis() + " error-msg: " + e.getMessage());
         log.error(e, e);
     }
 
     public static void info(Object msg) {
-        System.out.println("\r\n" + System.currentTimeMillis() + " info-msg: " + msg);
+        System.out.println(ENTER + System.currentTimeMillis() + " info-msg: " + msg);
         log.info(msg);
     }
 
