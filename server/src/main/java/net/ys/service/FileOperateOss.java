@@ -5,7 +5,6 @@ import com.aliyun.oss.model.GetObjectRequest;
 import net.ys.util.LogUtil;
 import net.ys.util.PropertyUtil;
 import net.ys.util.Tools;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -14,7 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-@Service(value = "fileOperate")
+//@Service(value = "fileOperate")
 public class FileOperateOss implements FileOperate {
 
     @Resource
