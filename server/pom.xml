@@ -114,18 +114,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.36</version>
         </dependency>
-
-        <dependency>
-            <groupId>oracle</groupId>
-            <artifactId>oracle</artifactId>
-            <version>jdbc6</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>sqljdbc4</artifactId>
-            <version>4.0</version>
-        </dependency>
         <!--db-->
 
         <!--other-->
@@ -217,66 +205,23 @@
         </dependency>
         <!--other-->
 
-        <!--kettle配置-->
+        <!--http client 上传文件用-->
         <dependency>
-            <groupId>pentaho-kettle</groupId>
-            <artifactId>kettle-core</artifactId>
-            <version>6.1.0.4-225</version>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.5.3</version>
         </dependency>
 
         <dependency>
-            <groupId>com.verhas</groupId>
-            <artifactId>license3j</artifactId>
-            <version>1.0.7</version>
+            <groupId>org.lucee</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
         </dependency>
-        <dependency>
-            <groupId>pentaho-kettle</groupId>
-            <artifactId>kettle-dbdialog</artifactId>
-            <version>6.1.0.4-225</version>
-        </dependency>
-        <dependency>
-            <groupId>pentaho-kettle</groupId>
-            <artifactId>kettle-engine</artifactId>
-            <version>6.1.0.4-225</version>
-        </dependency>
-
-        <dependency>
-            <groupId>pentaho</groupId>
-            <artifactId>metastore</artifactId>
-            <version>6.1.0.4-225</version>
-        </dependency>
-
-        <dependency>
-            <groupId>jtds</groupId>
-            <artifactId>jtds</artifactId>
-            <version>1.2.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>net.sf.jxls</groupId>
-            <artifactId>jxls-core</artifactId>
-            <version>1.0.6</version>
-        </dependency>
-
-        <dependency>
-            <groupId>rhino</groupId>
-            <artifactId>js</artifactId>
-            <version>1.7R2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>19.0</version>
-        </dependency>
-        <!--kettle配置-->
-
-        <!--压缩zip文件-->
-        <dependency>
-            <groupId>org.apache.ant</groupId>
-            <artifactId>ant</artifactId>
-            <version>1.8.2</version>
-        </dependency>
-        <!--压缩zip文件-->
+        <!--http client 上传文件用-->
     </dependencies>
 </project>

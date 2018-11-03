@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS `sys_file`;
 CREATE TABLE `sys_file` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `client_ip_address` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '客户端ip地址',
-  `storage_root_path` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '本地存储根目录',
+  `storage_root_path` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '本地存储根目录或云容器名',
   `file_path` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '文件路径',
   `file_name` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '文件名',
   `file_size` bigint(20) NOT NULL DEFAULT '0' COMMENT '文件大小（b）',
