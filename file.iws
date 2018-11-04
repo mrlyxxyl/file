@@ -182,7 +182,7 @@
       <file leaf-file-name="top.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/web/views/top.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="17" selection-start="973" selection-end="973" vertical-scroll-proportion="0.5761844">
+            <state line="18" column="11" selection-start="967" selection-end="967" vertical-scroll-proportion="0.5761844">
               <folding />
             </state>
           </provider>
@@ -809,7 +809,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/web/views/top.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="17" selection-start="973" selection-end="973" vertical-scroll-proportion="0.5761844">
+        <state line="18" column="11" selection-start="967" selection-end="967" vertical-scroll-proportion="0.5761844">
           <folding />
         </state>
       </provider>

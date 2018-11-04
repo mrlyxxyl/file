@@ -16,7 +16,7 @@
 <div class="top clearfloat">
     <div class="logo fl"><a href="javascript:void(0)"><img src="${baseUrl}/img/logo.jpg"></a></div>
     <div class="fr time">
-        <p>hello 您好，<span>管理员</span>欢迎进入文件存储系统!</p>
+        <p>您好，<span>管理员</span>欢迎进入文件存储系统!</p>
     </div>
 </div>
 <div class="fullSearch clearfloat">
