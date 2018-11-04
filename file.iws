@@ -178,19 +178,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="435" selection-end="435" vertical-scroll-proportion="0.30674848">
+            <state line="7" column="35" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0">
+            <state line="14" column="40" selection-start="597" selection-end="597" vertical-scroll-proportion="0.42944786">
               <folding />
             </state>
           </provider>
@@ -228,8 +228,8 @@
         <option value="$PROJECT_DIR$/server/readme.txt" />
         <option value="$PROJECT_DIR$/server/src/main/java/net/ys/service/FileOperateLocal.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/net/ys/service/FileOperateOss.java" />
-        <option value="$PROJECT_DIR$/client/pom.xml" />
         <option value="$PROJECT_DIR$/server/pom.xml" />
+        <option value="$PROJECT_DIR$/client/pom.xml" />
       </list>
     </option>
   </component>
@@ -973,16 +973,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/pom.xml">
+    <entry file="file://$PROJECT_DIR$/server/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0">
+        <state line="7" column="35" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/pom.xml">
+    <entry file="file://$PROJECT_DIR$/client/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="435" selection-end="435" vertical-scroll-proportion="0.30674848">
+        <state line="14" column="40" selection-start="597" selection-end="597" vertical-scroll-proportion="0.42944786">
           <folding />
         </state>
       </provider>
